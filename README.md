@@ -13,7 +13,7 @@ A PLACE TO GRIND DSA
 | Best Time to Buy and Sell Stock                           | [Link](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Easy             | [x]  |
 | Find duplicates                                           | [Link](https://leetcode.com/problems/find-all-duplicates-in-an-array/) | Medium           | [x]  |
 | Product of Array Except Self                             | [Link](https://leetcode.com/problems/product-of-array-except-self/) | Medium           | [come back for revision]  |
-| Maximum Subarray                                          | [Link](https://leetcode.com/problems/maximum-subarray/) | Easy             | [come back for revision ]  |
+| Maximum Subarray                                          | [Link](https://leetcode.com/problems/maximum-subarray/) | Easy             | [come back for revision]  |
 | Maximum Product Subarray                                  | [Link](https://leetcode.com/problems/maximum-product-subarray/) | Medium           | [come back for revision]  |
 | Find Minimum in Rotated Sorted Array                     | [Link](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Medium           | [ ]  |
 | Search in Rotated Sorted Array                           | [Link](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Medium           | [ ]  |

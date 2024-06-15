@@ -52,6 +52,6 @@
 ## Two-Pointer Pattern:
 - [x] **Two Sum II - Input array is sorted** - [LeetCode #167](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 - [ ] **Three Sum** - [LeetCode #15](https://leetcode.com/problems/3sum/)
-- [ ] **Remove Duplicates from Sorted Array** - [LeetCode #26](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
+- [x] **Remove Duplicates from Sorted Array** - [LeetCode #26](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 - [ ] **Move Zeroes** - [LeetCode #283](https://leetcode.com/problems/move-zeroes/)
 - [ ] **Container With Most Water** - [LeetCode #11](https://leetcode.com/problems/container-with-most-water/)

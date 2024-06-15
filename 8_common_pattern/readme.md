@@ -50,7 +50,7 @@
 - [ ] **Binary Tree Level Order Traversal II** - [LeetCode #107](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/)
 
 ## Two-Pointer Pattern:
-- [ ] **Two Sum II - Input array is sorted** - [LeetCode #167](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+- [x] **Two Sum II - Input array is sorted** - [LeetCode #167](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 - [ ] **Three Sum** - [LeetCode #15](https://leetcode.com/problems/3sum/)
 - [ ] **Remove Duplicates from Sorted Array** - [LeetCode #26](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 - [ ] **Move Zeroes** - [LeetCode #283](https://leetcode.com/problems/move-zeroes/)

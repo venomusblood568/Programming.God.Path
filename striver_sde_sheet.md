@@ -1,12 +1,12 @@
 # Striver's SDE Sheet – Top Coding Interview Problems
 
 ### Day 1: Arrays
-- [ ] Set Matrix Zeros
+- [x] Set Matrix Zeros
 - [ ] Pascal's Triangle
-- [ ] Next Permutation
-- [ ] Kadane's Algorithm
-- [ ] Sort an array of 0's, 1's and 2's
-- [ ] Stock Buy and Sell
+- [x] Next Permutation
+- [x] Kadane's Algorithm
+- [x] Sort an array of 0's, 1's and 2's
+- [x] Stock Buy and Sell
 
 ### Day 2: Arrays Part-II
 - [ ] Rotate Matrix
@@ -17,15 +17,15 @@
 - [ ] Inversion of Array (Pre-req: Merge Sort)
 
 ### Day 3: Arrays Part-III
-- [ ] Search in a 2D matrix
-- [ ] Pow(x, n)
-- [ ] Majority Element (>n/2 times)
+- [x] Search in a 2D matrix
+- [x] Pow(x, n)
+- [x] Majority Element (>n/2 times)
 - [ ] Majority Element (n/3 times)
 - [ ] Grid Unique Paths
 - [ ] Reverse Pairs (Leetcode)
 
 ### Day 4: Arrays Part-IV
-- [ ] 2Sum Problem
+- [x] 2Sum Problem
 - [ ] 4-Sum Problem
 - [ ] Longest Consecutive Sequence
 - [ ] Largest Subarray with K sum

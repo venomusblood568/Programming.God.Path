@@ -33,10 +33,10 @@
 - [ ] Longest Substring without repeat
 
 ### Day 5: Linked List
-- [ ] Reverse a LinkedList
-- [ ] Find the middle of LinkedList
-- [ ] Merge two sorted Linked List (use method used in mergeSort)
-- [ ] Remove N-th node from back of LinkedList
+- [x] Reverse a LinkedList
+- [x] Find the middle of LinkedList
+- [x] Merge two sorted Linked List (use method used in mergeSort)
+- [x] Remove N-th node from back of LinkedList
 - [ ] Add two numbers as LinkedList
 - [ ] Delete a given Node when a node is given.(0(1) solution)
 

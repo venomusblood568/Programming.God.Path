@@ -37,15 +37,15 @@
 - [x] Find the middle of LinkedList
 - [x] Merge two sorted Linked List (use method used in mergeSort)
 - [x] Remove N-th node from back of LinkedList
-- [ ] Add two numbers as LinkedList
-- [ ] Delete a given Node when a node is given.(0(1) solution)
+- [x] Add two numbers as LinkedList
+- [x] Delete a given Node when a node is given.(0(1) solution)
 
 ### Day 6: Linked List Part-II
-- [ ] Find intersection point of Y LinkedList
-- [ ] Detect a cycle in Linked List
-- [ ] Reverse a LinkedList in groups of size k.
-- [ ] Check if a LinkedList is palindrome or not.
-- [ ] Find the starting point of the Loop of LinkedList
+- [x] Find intersection point of Y LinkedList
+- [x] Detect a cycle in Linked List
+- [] Reverse a LinkedList in groups of size k.
+- [x] Check if a LinkedList is palindrome or not.
+- [x] Find the starting point of the Loop of LinkedList
 - [ ] Flattening of a LinkedList
 
 ### Day 7: Linked List and Arrays

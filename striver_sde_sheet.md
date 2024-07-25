@@ -43,7 +43,7 @@
 ### Day 6: Linked List Part-II
 - [x] Find intersection point of Y LinkedList
 - [x] Detect a cycle in Linked List
-- [] Reverse a LinkedList in groups of size k.
+- [ ] Reverse a LinkedList in groups of size k.
 - [x] Check if a LinkedList is palindrome or not.
 - [x] Find the starting point of the Loop of LinkedList
 - [ ] Flattening of a LinkedList
@@ -53,7 +53,7 @@
 - [ ] Clone a Linked List with random and next pointer
 - [ ] 3 sum
 - [ ] Trapping Rainwater
-- [ ] Remove Duplicate from Sorted array
+- [X] Remove Duplicate from Sorted array
 - [ ] Max consecutive ones
 
 ### Day 8: Greedy Algorithm

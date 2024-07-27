@@ -49,28 +49,28 @@
 - [ ] Flattening of a LinkedList
 
 ### Day 7: Linked List and Arrays
-- [ ] Rotate a LinkedList
+- [x] Rotate a LinkedList
 - [ ] Clone a Linked List with random and next pointer
 - [ ] 3 sum
 - [ ] Trapping Rainwater
 - [X] Remove Duplicate from Sorted array
-- [ ] Max consecutive ones
+- [x] Max consecutive ones
 
 ### Day 8: Greedy Algorithm
-- [ ] N meetings in one room
-- [ ] Minimum number of platforms required for a railway
-- [ ] Job sequencing Problem
+- [x] N meetings in one room
+- [x] Minimum number of platforms required for a railway
+- [x] Job sequencing Problem
 - [ ] Fractional Knapsack Problem
 - [ ] Greedy algorithm to find minimum number of coins
 - [ ] Assign Cookies
 
 ### Day 9: Recursion
-- [ ] Subset Sums
+- [x] Subset Sums
 - [ ] Subset-II
 - [ ] Combination sum-1
 - [ ] Combination sum-2
-- [ ] Palindrome Partitioning
-- [ ] K-th permutation Sequence
+- [x] Palindrome Partitioning
+- [x] K-th permutation Sequence
 
 ### Day 10: Recursion and Backtracking
 - [ ] Print all permutations of a string/array

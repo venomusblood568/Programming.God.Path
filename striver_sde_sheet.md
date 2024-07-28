@@ -43,10 +43,10 @@
 ### Day 6: Linked List Part-II
 - [x] Find intersection point of Y LinkedList
 - [x] Detect a cycle in Linked List
-- [ ] Reverse a LinkedList in groups of size k.
+- [x] Reverse a LinkedList in groups of size k.
 - [x] Check if a LinkedList is palindrome or not.
 - [x] Find the starting point of the Loop of LinkedList
-- [ ] Flattening of a LinkedList
+- [x] Flattening of a LinkedList
 
 ### Day 7: Linked List and Arrays
 - [x] Rotate a LinkedList
@@ -60,15 +60,15 @@
 - [x] N meetings in one room
 - [x] Minimum number of platforms required for a railway
 - [x] Job sequencing Problem
-- [ ] Fractional Knapsack Problem
-- [ ] Greedy algorithm to find minimum number of coins
-- [ ] Assign Cookies
+- [x] Fractional Knapsack Problem
+- [x] Greedy algorithm to find minimum number of coins
+- [x] Assign Cookies
 
 ### Day 9: Recursion
 - [x] Subset Sums
-- [ ] Subset-II
-- [ ] Combination sum-1
-- [ ] Combination sum-2
+- [x] Subset-II
+- [x] Combination sum-1
+- [x] Combination sum-2
 - [x] Palindrome Partitioning
 - [x] K-th permutation Sequence
 

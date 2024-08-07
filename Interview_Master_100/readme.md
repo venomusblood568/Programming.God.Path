@@ -85,3 +85,31 @@ class Solution {
 }
 
 ```
+# [4] Best Time to Buy and Sell Stock
+```
+class Solution {
+    public int maxProfit(int[] prices) {
+        // Initialize buy to the first element in prices
+        int buy = prices[0];
+        // Initialize profit to 0
+        int profit = 0;
+        
+        // Loop through each price in the prices array
+        for (int i = 0; i < prices.length; i++) {
+            // If the current price is less than the current buy price
+            if (prices[i] < buy) {
+                // Update buy to the current price
+                buy = prices[i];
+            }
+            // If the profit from selling at the current price is greater than the current profit
+            else if (prices[i] - buy > profit) {
+                // Update profit to the profit from selling at the current price
+                profit = prices[i] - buy;
+            }
+        }
+        // Return the maximum profit found
+        return profit;
+    }
+}
+
+```

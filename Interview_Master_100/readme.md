@@ -46,3 +46,42 @@ class Solution {
 }
 
 ```
+# [3] Merge Two Sorted Lists 
+```
+class Solution {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        // Create a dummy node to act as the start of the merged list
+        ListNode head = new ListNode(0);
+        
+        // Base cases: if both lists are null, return null
+        if (list1 == null && list2 == null) return null;
+        
+        // If list1 is null, return list2 as there is nothing to merge from list1
+        if (list1 == null) return list2;
+        
+        // If list2 is null, return list1 as there is nothing to merge from list2
+        if (list2 == null) return list1;
+
+        // Compare the current nodes of list1 and list2
+        if (list1.val > list2.val) {
+            // If list1's value is greater, set head to list2
+            head = list2;
+            // Move list2 to the next node
+            list2 = list2.next;
+        } else {
+            // If list2's value is greater or equal, set head to list1
+            head = list1;
+            // Move list1 to the next node
+            list1 = list1.next;
+        }
+
+        // Recursively merge the remaining nodes of both lists
+        // Set the next pointer of the current head to the result of the recursive merge
+        head.next = mergeTwoLists(list1, list2);
+        
+        // Return the head of the merged list
+        return head;
+    }
+}
+
+```

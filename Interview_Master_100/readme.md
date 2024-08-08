@@ -113,3 +113,58 @@ class Solution {
 }
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# [9] Linked List Cycle
+```
+public class Solution {
+    // Floyd's Tortoise and Hare approach
+    public boolean hasCycle(ListNode head) {
+        // BASE CASE: If the list is empty, there is no cycle
+        if (head == null) {
+            return false;
+        }
+
+        // Initialize two pointers, fast and slow, both pointing to the head of the list
+        ListNode fast = head;
+        ListNode slow = head;
+
+        // Traverse the list
+        while (fast != null && fast.next != null) {
+            // Move fast pointer two steps ahead
+            fast = fast.next.next;
+            // Move slow pointer one step ahead
+            slow = slow.next;
+
+            // If slow and fast pointers meet, there is a cycle
+            if (slow == fast) {
+                return true;
+            }
+        }
+
+        // If we reach the end of the list, there is no cycle
+        return false;
+    }
+}
+
+```

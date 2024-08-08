@@ -147,7 +147,30 @@ class Solution {
     }
 }
 ```
+# [6]  Invert Binary Tree
+```
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        // Base case: If the current node is null, return null (no tree to invert)
+        if (root == null) {
+            return null;
+        }
 
+        // Temporarily store the left subtree
+        TreeNode temp = root.left;
+
+        // Recursively invert the right subtree and assign it to the left child of the current node
+        root.left = invertTree(root.right);
+
+        // Recursively invert the left subtree (stored in temp) and assign it to the right child of the current node
+        root.right = invertTree(temp);
+
+        // Return the current node after its left and right children have been swapped (inverted)
+        return root;
+    }
+}
+
+```
 
 
 # [9] Linked List Cycle

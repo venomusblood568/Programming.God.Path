@@ -172,6 +172,24 @@ class Solution {
 
 ```
 
+# [7] Valid Anagram
+```
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        // Convert the strings to character arrays
+        char[] sChars = s.toCharArray();
+        char[] tChars = t.toCharArray();
+
+        // Sort the character arrays
+        Arrays.sort(sChars);
+        Arrays.sort(tChars);
+
+        // Compare the sorted character arrays
+        return Arrays.equals(sChars, tChars);
+    }
+}
+
+```
 
 # [9] Linked List Cycle
 ```

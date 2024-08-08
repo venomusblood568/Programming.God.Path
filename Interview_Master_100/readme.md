@@ -190,6 +190,22 @@ class Solution {
 }
 
 ```
+# [8] Binary Search
+```
+class Solution {
+    public int search(int[] nums, int target) {
+        //edge case
+        if(nums == null) return -1;
+
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] == target){
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+```
 
 # [9] Linked List Cycle
 ```
@@ -223,4 +239,22 @@ public class Solution {
     }
 }
 
+```
+# [10] Maximum Depth of Binary Tree 
+```
+class Solution {
+    public int maxDepth(TreeNode root) {
+        //base case
+        if(root == null){
+            return 0;
+        }
+        // counting the left hand side
+        int lh = maxDepth(root.left);
+        // counting the right hand side
+        int rh = maxDepth(root.right);
+
+        // 1 is for currentnode and Math.max will select the higher value;
+        return 1 + Math.max(lh,rh);
+    }
+}
 ```

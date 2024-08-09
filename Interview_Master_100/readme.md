@@ -298,3 +298,139 @@ class Solution {
 }
 
 ```
+
+# [13] Majority Element
+```
+class Solution {
+    public int majorityElement(int[] nums) {
+        // Initialize count to 0, which will track the balance between the current majority candidate and others
+        int count = 0;
+        
+        // Initialize the first element of the array as the initial majority candidate
+        int major = nums[0];
+
+        // Iterate through each element in the array
+        for(int i : nums) {
+            // If count is 0, set the current element as the new majority candidate
+            if(count == 0) {
+                major = i;    // Update major to the current element
+                count++;      // Increment count because we have one occurrence of the new candidate
+            }
+            // If the current element matches the current majority candidate
+            else if(i == major) {
+                count++;      // Increment count because the candidate is confirmed again
+            }
+            // If the current element is different from the majority candidate
+            else {
+                count--;      // Decrement count because we have a competing element
+            }
+        }
+        
+        // After processing all elements, return the majority candidate
+        return major;
+    }
+}
+
+```
+# [14] Missing Number
+
+```
+class Solution {
+    public int missingNumber(int[] nums) {
+        // Calculate the length of the array, which represents the range of numbers from 0 to n
+        int n = nums.length;
+        
+        // Calculate the expected sum of all numbers from 0 to n using the formula n*(n+1)/2
+        int expected_sum = n * (n + 1) / 2;
+        
+        // Initialize actual_sum to 0, which will be used to sum all elements in the array
+        int actual_sum = 0;
+        
+        // Iterate through the array and calculate the sum of all elements
+        for(int i : nums) {
+            actual_sum += i;  // Add each element in nums to actual_sum
+        }
+        
+        // The missing number is the difference between the expected sum and the actual sum
+        return expected_sum - actual_sum;
+    }
+}
+
+```
+
+# [15] Reverse String
+
+```
+class Solution {
+    public void reverseString(char[] s) {
+        // Initialize a pointer 'i' at the beginning of the array
+        int i = 0;
+        
+        // Initialize a pointer 'j' at the end of the array
+        int j = s.length - 1;
+        
+        // Continue swapping characters until the pointers meet or cross
+        while (i <= j) {
+            // Temporarily store the character at index 'i'
+            // since we are storing char so use char not int
+            char temp = s[i];
+            
+            // Swap the character at index 'i' with the character at index 'j'
+            s[i] = s[j];
+            s[j] = temp;
+            
+            // Move the 'i' pointer one step to the right
+            i++;
+            
+            // Move the 'j' pointer one step to the left
+            j--;
+        }
+    }
+}
+
+```
+
+# [16] Diameter of Binary Tree
+```
+class Solution {
+    // Class-level variable to store the maximum diameter of the binary tree
+    int max = 0;
+
+    public int diameterOfBinaryTree(TreeNode root) {
+        // Start the depth-first search to compute the diameter
+        depth(root);
+        // Return the maximum diameter found
+        return max;
+    }
+
+    private int depth(TreeNode root) {
+        // Base case: if the node is null, the depth is 0
+        if (root == null) return 0;
+
+        // Recursively compute the depth of the left subtree
+        int left = depth(root.left);
+        // Recursively compute the depth of the right subtree
+        int right = depth(root.right);
+
+        // Update the maximum diameter using the sum of left and right subtree depths
+        max = Math.max(max, left + right);
+
+        // Return the depth of the current subtree (1 + max depth of left or right subtree)
+        return 1 + Math.max(left, right);
+    }
+}
+```
+# [17] Middle of the Linked List
+```
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+}
+```

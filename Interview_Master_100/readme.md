@@ -258,3 +258,43 @@ class Solution {
     }
 }
 ```
+# [11] Single Number
+```
+class Solution {
+    public int singleNumber(int[] nums) {
+        int xor = 0;
+        for(int i = 0 ; i < nums.length ; i++){
+            xor = xor ^ nums[i];
+        }
+        return xor;
+    }
+}
+```
+# [12] Reverse Linked List
+```
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        // Initialize newhead to null. This will eventually become the head of the reversed list.
+        ListNode newhead = null;
+        
+        // Iterate through the list until head becomes null (end of the list).
+        while (head != null) {
+            // Store the next node in the list in a temporary variable 'next'.
+            ListNode next = head.next;
+            
+            // Reverse the current node's pointer by making head.next point to newhead.
+            head.next = newhead;
+            
+            // Move newhead to point to the current head. This grows the reversed list.
+            newhead = head;
+            
+            // Move head to the next node in the original list to continue the process.
+            head = next;
+        }
+        
+        // Return newhead, which is now the head of the fully reversed list.
+        return newhead;
+    }
+}
+
+```

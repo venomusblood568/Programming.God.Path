@@ -434,3 +434,94 @@ class Solution {
     }
 }
 ```
+# [18] Convert Sorted Array to Binary Search Tree
+```
+class Solution {
+    // Main function to convert a sorted array to a balanced binary search tree (BST)
+    public TreeNode sortedArrayToBST(int[] nums) {
+        // If the input array is empty, return null (no tree to build)
+        if (nums.length == 0) return null;
+
+        // Call the helper function with the full range of the array
+        return helper(nums, 0, nums.length - 1);
+    }
+
+    // Helper function to recursively build the BST from the sorted array
+    private TreeNode helper(int[] nums, int left, int right) {
+        // Base case: if left index exceeds right, the subtree is empty, return null
+        if (left > right) return null;
+
+        // Base case: if only one element is left, create a leaf node with that value
+        if (left == right) return new TreeNode(nums[left]);
+
+        // Calculate the middle index to maintain the balance of the BST
+        int mid = (left + right) / 2;
+
+        // Create the root node with the value at the middle index
+        TreeNode root = new TreeNode(nums[mid]);
+
+        // Recursively build the left subtree with the left half of the array
+        root.left = helper(nums, left, mid - 1);
+
+        // Recursively build the right subtree with the right half of the array
+        root.right = helper(nums, mid + 1, right);
+
+        // Return the constructed tree rooted at this node
+        return root;
+    }
+}
+
+```
+# [19] Maximum Subarray 
+```
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int MaxSum = Integer.MIN_VALUE;
+        int CurrentSum = 0;
+        for(int i = 0; i < nums.length; i++){
+            CurrentSum += nums[i];
+        
+            if(CurrentSum > MaxSum){
+                MaxSum = CurrentSum;
+            }
+            if(CurrentSum < 0){
+                CurrentSum = 0;
+            }
+        }
+        return MaxSum;
+    }
+}
+```
+# [20] Climbing Stairs
+```
+class Solution {
+    // Method to calculate the number of ways to climb 'n' stairs
+    public int climbStairs(int n) { // FIBONACCI
+        
+        // If there are 1 or 2 stairs, return n directly because:
+        // - If n = 1, there's only 1 way to climb 1 stair.
+        // - If n = 2, there are 2 ways to climb 2 stairs (either 1+1 or 2).
+        if (n <= 2)
+            return n;
+
+        // Initialize the number of ways to get to the first and second steps
+        int one = 1;  // 1 way to reach the 1st step
+        int two = 2;  // 2 ways to reach the 2nd step
+
+        // Loop through the steps starting from the 3rd step up to the nth step
+        for (int i = 3; i <= n; i++) {
+            // Temporarily store the value of 'one', which represents ways to get to (i-2)
+            int temp = one;
+
+            // Update 'one' to be the current 'two', which now represents ways to get to (i-1)
+            one = two;
+
+            // Update 'two' to be the sum of 'two' and 'temp', representing ways to get to the ith step
+            two += temp;
+        }
+
+        // Return the number of ways to reach the nth step
+        return two;
+    }
+}
+```

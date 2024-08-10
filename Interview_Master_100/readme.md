@@ -525,3 +525,82 @@ class Solution {
     }
 }
 ```
+
+# [21] Symmetric Tree
+
+```
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        if(root == null){
+            return true;
+        }
+        return isMirror(root.left,root.right);
+    }
+    private boolean isMirror(TreeNode lh, TreeNode rh){
+        if(lh == null && rh == null){
+            return true;
+        }
+        if(lh == null || rh == null){
+            return false;
+        }
+        return lh.val == rh.val 
+        && isMirror(lh.left, rh.right) 
+        && isMirror(lh.right, rh.left);
+    }
+}
+```
+# [22] Binary Tree Level Order Traversal
+
+```
+class Solution {
+    // Method to perform level order traversal of the binary tree
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        // Initialize the list that will store the level order traversal
+        List<List<Integer>> ans = new ArrayList<>();
+        // Call the helper method to fill the list with nodes at each level
+        helper(ans, root, 0);
+        // Return the result list
+        return ans;
+    }
+
+    // Helper method to perform a recursive traversal of the tree
+    private void helper(List<List<Integer>> ans, TreeNode current, int level) {
+        // Base case: if the current node is null, return
+        if (current == null) {
+            return;
+        }
+
+        // If the current level doesn't have a list yet, create one
+        if (ans.size() == level) {
+            ans.add(new ArrayList<Integer>());
+        }
+
+        // Add the current node's value to the list corresponding to its level
+        ans.get(level).add(current.val);
+
+        // Recursively call the helper for the left subtree, incrementing the level
+        helper(ans, current.left, level + 1);
+
+        // Recursively call the helper for the right subtree, incrementing the level
+        helper(ans, current.right, level + 1);
+    }
+}
+
+```
+
+# [23] Best Time to Buy and Sell Stock II
+
+```
+class Solution {
+    public int maxProfit(int[] prices) {
+        int profit = 0;
+        int n = prices.length;
+        for(int i = 1; i < n ; i++){
+            if(prices[i] > prices[i-1]){
+                profit += prices[i] - prices[i-1];
+            }
+        }
+        return profit;
+    }
+}
+```

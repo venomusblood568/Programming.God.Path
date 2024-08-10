@@ -604,3 +604,54 @@ class Solution {
     }
 }
 ```
+# [24] House Robber
+
+```
+class Solution {
+    public int rob(int[] nums) {
+       // Edge case: If no houses exist, return 0
+       if(nums.length == 0) {
+           return 0;
+       }
+       
+       // Edge case: If there's only one house, return its value
+       if(nums.length == 1) {
+           return nums[0];
+       }
+
+       // Initialize two variables to track maximum profit
+       int p1 = 0; // Maximum profit up to the current house
+       int p2 = 0; // Maximum profit up to the previous house
+
+       // Iterate through each house's money in the array
+       for(int i : nums) {
+           // Temporarily store the current max profit
+           int temp = p1;
+
+           // Update p1 to be the maximum of either robbing this house or skipping it
+           p1 = Math.max(p2 + i, p1);
+
+           // Update p2 to the previous maximum (stored in temp)
+           p2 = temp;
+       } 
+
+       // Return the maximum profit after processing all houses
+       return p1;
+    }
+}
+
+```
+# [25] Number of 1 Bits
+
+```
+class Solution {
+    public int hammingWeight(int n) {
+        int counter = 0;
+        while( n != 0){
+            n = n & (n-1);
+            counter++;
+        }
+        return counter;
+    }
+}
+```

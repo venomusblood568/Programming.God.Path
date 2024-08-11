@@ -285,6 +285,81 @@ These terms describe different methods of data transmission in a network. Each s
 | **Efficiency**      | Efficient for point-to-point communication | Inefficient for large networks; high traffic | Efficient for group communication, reduces unnecessary traffic |
 | **Use Cases**       | Web browsing, file transfers   | ARP requests, network announcements | Video conferencing, live streaming, online gaming |
 
+# Network Topology
+
+## Definition
+
+Network topology refers to the arrangement or layout of different elements (links, nodes, devices) in a computer network. It describes how devices are connected and how data flows between them.
+
+Network topology is the physical or logical arrangement of a network, dictating how devices are connected and how data flows. Common types include bus, star, ring, mesh, tree, and hybrid topologies, each with its own advantages and disadvantages depending on the network's requirements.
+
+## Types of Network Topologies
+
+### 1. **Bus Topology**
+- **Description**: All devices are connected to a single central cable, called the "bus".
+- **Advantages**: Easy to install and requires less cable.
+- **Disadvantages**: If the bus fails, the entire network goes down; performance decreases as more devices are added.
+
+### 2. **Star Topology**
+- **Description**: All devices are connected to a central hub or switch. The hub acts as a repeater for data flow.
+- **Advantages**: Easy to manage and expand; if one device fails, the rest of the network is unaffected.
+- **Disadvantages**: If the central hub fails, the entire network is disrupted; requires more cable than bus topology.
+
+### 3. **Ring Topology**
+- **Description**: Each device is connected to two other devices, forming a circular path for data to travel.
+- **Advantages**: Data flows in one direction, reducing the chance of packet collisions.
+- **Disadvantages**: If a single device or connection fails, it can take down the entire network.
+
+### 4. **Mesh Topology**
+- **Description**: Every device is connected to every other device in the network, either fully or partially.
+- **Advantages**: Highly reliable; if one connection fails, others can take over.
+- **Disadvantages**: Expensive and complex to install and maintain due to the large number of cables and connections.
+
+### 5. **Tree Topology**
+- **Description**: A hybrid topology that combines elements of star and bus topologies, with groups of star-configured networks connected to a linear bus backbone.
+- **Advantages**: Scalable and easy to manage; allows for hierarchical management.
+- **Disadvantages**: If the backbone fails, the entire network can be affected.
+
+### 6. **Hybrid Topology**
+- **Description**: Combines two or more different types of topologies (e.g., star-bus, star-ring) to suit specific network requirements.
+- **Advantages**: Flexible and can be designed to meet specific needs.
+- **Disadvantages**: Complex to design and install; can be expensive.
+
+# LAN, WAN, MAN, and Their Differences
+
+## 1. Local Area Network (LAN)
+- **Definition**: A network that connects computers and devices within a limited area, such as a home, office, or a small group of buildings.
+- **Features**:
+  - High data transfer speeds.
+  - Typically owned, managed, and operated by a single organization.
+  - Limited geographic range (usually within a single building or campus).
+- **Use Cases**: Home networks, office networks, schools, and small businesses.
+
+## 2. Wide Area Network (WAN)
+- **Definition**: A network that covers a large geographic area, such as a city, country, or even globally, connecting multiple LANs.
+- **Features**:
+  - Lower data transfer speeds compared to LAN.
+  - Can be public or private, and typically requires leased telecommunication lines.
+  - Extends over large distances, often across countries or continents.
+- **Use Cases**: The internet, corporate networks connecting multiple locations, banking networks.
+
+## 3. Metropolitan Area Network (MAN)
+- **Definition**: A network that spans a metropolitan area, such as a city or a large campus, connecting multiple LANs.
+- **Features**:
+  - Intermediate in size and scope between LAN and WAN.
+  - Often used to connect multiple buildings or offices within a city.
+  - Higher data transfer speeds than WAN but lower than LAN.
+- **Use Cases**: City-wide Wi-Fi networks, connecting multiple branches of a company within a city.
+
+## Differences Between LAN, WAN, and MAN
+
+| Feature               | LAN                           | MAN                           | WAN                            |
+|-----------------------|-------------------------------|-------------------------------|--------------------------------|
+| **Geographic Scope**  | Limited to a building or campus | Covers a city or large campus  | Covers large areas, often worldwide |
+| **Speed**             | High                          | Moderate                      | Lower (compared to LAN and MAN) |
+| **Ownership**         | Usually owned by one organization | May be operated by a single organization or service provider | Often involves leased services from telecom providers |
+| **Cost**              | Low setup and maintenance cost | Moderate                      | High, due to the need for long-distance infrastructure |
+| **Use Cases**         | Homes, offices, schools       | City networks, large campuses | The internet, global corporate networks |
 
 
 

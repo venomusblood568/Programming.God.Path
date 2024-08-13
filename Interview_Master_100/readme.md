@@ -655,3 +655,102 @@ class Solution {
     }
 }
 ```
+# [26] Validate Binary Search Tree
+
+```
+class Solution {
+    public boolean isValidBST(TreeNode root) {
+        // Base case: If the tree is empt,
+        if (root == null) return true;
+
+        // Create a stack to help with the iterative in-order traversal of the tree.
+        Stack<TreeNode> stack = new Stack<>();
+
+        // Pointer to keep track of the previously visited node during traversal.
+        TreeNode pre = null;
+
+        // Main loop: Continue as long as there are nodes to process (either root is not null or stack is not empty).
+        while (root != null || !stack.isEmpty()) {
+            
+            // Traverse to the leftmost node, pushing all nodes onto the stack.
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+
+            // Pop the node from the stack (the leftmost unprocessed node).
+            root = stack.pop();
+
+            // Check if the current node's value is less than or equal to the previous node's value.
+            // If it is, the tree is not a valid BST.
+            if (pre != null && root.val <= pre.val) {
+                return false;
+            }
+
+            // Update 'pre' to the current node, as it will be the previous node in the next iteration.
+            pre = root;
+
+            // Move to the right subtree to continue the in-order traversal.
+            root = root.right;
+        }
+
+        // If the entire tree has been traversed without finding any violations, return true indicating it is a valid BST.
+        return true;
+    }
+}
+
+```
+# [27]  Min Stack
+
+```
+class MinStack {
+
+    public Stack<Integer> stac;
+    public Stack<Integer> minStack;
+
+    public MinStack() { 
+        stac = new Stack<>();
+        minStack = new Stack<>();
+    }
+    
+    public void push(int val) {
+        stac.push(val);
+        if(minStack.isEmpty() || val <= minStack.peek()){
+            minStack.push(val);
+        }
+    }
+    
+    public void pop() {
+        int a = minStack.peek();
+        if(stac.pop() == a){
+            minStack.pop();
+        }
+    }
+    
+    public int top() {
+        return stac.peek();
+    }
+    
+    public int getMin() {
+        return minStack.peek();
+    }
+}
+
+```
+
+# [28] Contains Duplicate
+
+```
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        int n = nums.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (nums[i] == nums[j])
+                    return true;
+            }
+        }
+        return false;
+    }
+}
+```

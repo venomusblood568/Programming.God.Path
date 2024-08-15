@@ -754,3 +754,57 @@ class Solution {
     }
 }
 ```
+# [29] Kth Smallest Element in a BST
+
+```
+class Solution {
+    private int count = 0;
+    private int result = -1;
+    public int kthSmallest(TreeNode root, int k) {
+        inorder(root,k);
+        return result;
+    }
+    private void inorder(TreeNode node, int k ){
+        if(node == null){
+            return;
+        }
+        inorder(node.left,k);
+        count++;
+        if(count == k){
+            result = node.val;
+            return;
+        }
+        inorder(node.right,k);
+    }
+
+}
+```
+# [30] Merge Intervals
+
+```
+// SLIDING WINDOW TECHNIUQE
+class Solution {
+    public int[][] merge(int[][] intervals) {
+       List<int[]> answer = new ArrayList<>();
+
+       if(intervals.length != 0 || intervals != null){
+        Arrays.sort(intervals,(a,b) -> a[0] - b[0]);
+        int start = intervals[0][0];
+        int end = intervals[0][1];
+
+        for(int[] i: intervals){
+            if(i[0] <= end){
+                end = Math.max(end,i[1]);
+            }
+            else{
+                answer.add(new int[]{start,end});
+                start = i[0];
+                end = i[1];
+            }
+        }
+        answer.add(new int[]{start,end});
+       } 
+       return answer.toArray(new int[0][]);
+    }
+}
+```

@@ -2,7 +2,7 @@
 
 ### Day 1: Arrays
 - [x] Set Matrix Zeros
-- [ ] Pascal's Triangle
+- [X] Pascal's Triangle
 - [x] Next Permutation
 - [x] Kadane's Algorithm
 - [x] Sort an array of 0's, 1's and 2's
@@ -91,8 +91,8 @@
 - [ ] Aggressive Cows
 
 ### Day 12: Heaps
-- [ ] Max heap, Min Heap Implementation (Only for interviews)
-- [ ] Kth Largest Element
+- [x] Max heap, Min Heap Implementation (Only for interviews)
+- [x] Kth Largest Element
 - [ ] Maximum Sum Combination
 - [ ] Find Median from Data Stream
 - [ ] Merge K sorted arrays

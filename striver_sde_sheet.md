@@ -50,9 +50,9 @@
 
 ### Day 7: Linked List and Arrays
 - [x] Rotate a LinkedList
-- [ ] Clone a Linked List with random and next pointer
-- [ ] 3 sum
-- [ ] Trapping Rainwater
+- [x] Clone a Linked List with random and next pointer
+- [x] 3 sum
+- [x] Trapping Rainwater
 - [X] Remove Duplicate from Sorted array
 - [x] Max consecutive ones
 

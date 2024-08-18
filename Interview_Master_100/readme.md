@@ -838,3 +838,149 @@ class Solution {
     }
 }
 ```
+
+# [32] Spiral Matrix
+
+```
+class Solution {
+    public List<Integer> spiralOrder(int[][] matrix) {
+        List<Integer> result = new ArrayList<>();
+        
+        if(matrix == null || matrix.length == 0){
+            return result;
+        }
+
+        int rows = matrix.length;
+        int col = matrix[0].length;
+        int left = 0;
+        int  right = col - 1;
+        int top = 0;
+        int bottom = rows - 1;
+
+        while(left <= right && top <= bottom){
+            for(int i = left; i <= right ; i++){
+                result.add(matrix[top][i]);
+            }
+            top++;
+            for(int i = top; i <= bottom ; i++){
+                result.add(matrix[i][right]);
+            }
+            right--;
+
+            if(top <= bottom){
+                for(int i = right; i >= left; i--){
+                    result.add(matrix[bottom][i]);
+                }
+                bottom--;
+            }
+            if(left <= right){
+                for(int i = bottom; i >= top; i--){
+                    result.add(matrix[i][left]);
+                }
+                left++;
+            }
+        }
+        return result;
+    }
+}
+```
+
+# [33] 3Sum
+
+```
+class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<>();
+        Arrays.sort(nums);
+
+        for(int i = 0 ; i < nums.length -2; i++){
+            if(i > 0 && nums[i] == nums[i-1]){
+                continue;
+            }
+            int j = i+1;
+            int k = nums.length - 1;
+
+            while(j < k){
+                int sum = nums[i] + nums[j] + nums[k];
+
+                if (sum == 0){
+                    ans.add(Arrays.asList(nums[i],nums[j],nums[k]));
+
+                    while(j < k && nums[j] == nums[j+1]){
+                        j++;
+                    }
+                    while(j < k && nums[k] == nums[k-1]){
+                        k--;
+                    }
+
+                    j++;
+                    k--;
+                }
+                else if(sum < 0){
+                    j++;
+                }
+                else{
+                    k--;
+                }
+            }
+        }
+        return ans;
+    }
+}
+```
+
+# [34] Binary Tree Zigzag Level Order Traversal
+
+```
+class Solution {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> res = new ArrayList <>();
+        helper(root,0,res);
+        return res;
+    }
+    private void helper(TreeNode root, int level,List<List<Integer>> list){
+        if(root == null){
+            return;
+        }
+        if(list.size() <= level){
+            list.add(new ArrayList<>());
+        }
+        if(level % 2 == 0){
+            list.get(level).add(root.val);
+        }
+        else{
+            list.get(level).add(0,root.val);
+        }
+        helper(root.left, level+1,list);
+        helper(root.right,level+1,list);
+    }
+}
+```
+
+# [35] Construct Binary Tree from Preorder and Inorder Traversal
+
+```
+class Solution {
+    int prestart = 0;
+    int instart = 0;
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        return build(preorder,inorder,Integer.MIN_VALUE);
+    }
+    private TreeNode build(int[] preorder,int[]inorder,int inend){
+        if(prestart >= preorder.length){
+            return null;
+        }
+
+        if(inorder[instart] == inend){
+            instart++;
+            return null;    
+        }
+
+        TreeNode root = new TreeNode(preorder[prestart++]);
+        root.left = build(preorder,inorder,root.val);
+        root.right = build(preorder,inorder,inend);
+        return root;
+
+    }
+}
+```

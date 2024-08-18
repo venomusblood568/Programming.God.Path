@@ -984,3 +984,203 @@ class Solution {
     }
 }
 ```
+# [36]  Container With Most Water 
+
+```
+class Solution {
+    public int maxArea(int[] height) {
+        int left = 0;
+        int right = height.length -1;
+        int maxarea =0;
+
+        while(left < right){
+            int currentarea = Math.min(height[left],height[right]) * (right - left);
+            maxarea = Math.max(maxarea , currentarea);
+
+            if(height[left] < height[right]){
+                left++;
+            }
+            else{
+                right--;
+            }
+        }
+        return maxarea;
+    }
+}
+```
+# [37] Flatten Binary Tree to Linked List
+
+```
+class Solution {
+    private TreeNode prev = null; // Previous node in flattened list
+
+    public void flatten(TreeNode root) {
+        if (root == null) // Base case: end of recursion
+            return;
+        
+        flatten(root.right); // Flatten right subtree
+        
+        flatten(root.left); // Flatten left subtree
+        
+        root.right = prev; // Link right to previously processed node
+        root.left = null; // Set left to null (no left child in flattened list)
+        
+        prev = root; // Update prev to current node
+    }
+
+}
+```
+
+# [38] Group Anagrams
+
+```
+class Solution {
+    public List<List<String>> groupAnagrams(String[] words) {
+        Map<String,List<String>> anagramgroup = new HashMap<>();
+
+        for(String word: words){
+            char[] charArray = word.toCharArray();
+            Arrays.sort(charArray);
+            String key = new String(charArray);
+
+            if(!anagramgroup.containsKey(key)){
+                anagramgroup.put(key,new ArrayList<>(List.of(word)));
+            }
+            else{
+                anagramgroup.get(key).add(word);
+            }
+        }
+
+        return new ArrayList<>(anagramgroup.values());
+    }
+}
+```
+
+# [39]  Implement Trie (Prefix Tree)
+```
+class Trie {
+    Node root; // Root node of the Trie
+
+    public Trie() {
+        root = new Node(); // Initialize root node
+    }
+
+    public void insert(String word) {
+        root.insert(word, 0); // Insert the word starting at root
+    }
+
+    public boolean search(String word) {
+        return root.search(word, 0); // Search for the word starting at root
+    }
+
+    public boolean startsWith(String prefix) {
+        return root.startsWith(prefix, 0); // Check prefix starting at root
+    }
+}
+
+class Node {
+    Node[] nodes; // Array to store child nodes (26 for each letter)
+    boolean isEnd; // Marks if the node is the end of a word
+
+    Node() {
+        nodes = new Node[26]; // Initialize nodes array for each letter
+    }
+
+    // Insert a word starting from a specific index
+    public void insert(String word, int idx) {
+        if (idx >= word.length()) {
+            return; // End recursion if index exceeds word length
+        }
+        int i = word.charAt(idx) - 'a'; // Find the position of the current letter
+        if (nodes[i] == null) {
+            nodes[i] = new Node(); // Create a new node if it doesn't exist
+        }
+        if (idx == word.length() - 1) {
+            nodes[i].isEnd = true; // Mark end of the word
+        }
+        nodes[i].insert(word, idx + 1); // Recursively insert the rest of the word
+    }
+
+    // Search for a word starting from a specific index
+    public boolean search(String word, int idx) {
+        if (idx >= word.length()) {
+            return false; // End of word not reached
+        }
+        Node node = nodes[word.charAt(idx) - 'a']; // Get the node for the current letter
+        if (node == null) {
+            return false; // If the node doesn't exist, the word doesn't exist
+        }
+        if (idx == word.length() - 1 && node.isEnd) {
+            return true; // Word found if it's the end
+        }
+        return node.search(word, idx + 1); // Recursively search the rest of the word
+    }
+
+    // Check if a prefix exists, starting from a specific index
+    public boolean startsWith(String prefix, int idx) {
+        if (idx >= prefix.length()) {
+            return false; // End of prefix not reached
+        }
+        Node node = nodes[prefix.charAt(idx) - 'a']; // Get the node for the current letter
+        if (node == null) {
+            return false; // If the node doesn't exist, the prefix doesn't exist
+        }
+        if (idx == prefix.length() - 1) {
+            return true; // Prefix found
+        }
+        return node.startsWith(prefix, idx + 1); // Recursively check the rest of the prefix
+    }
+}
+```
+# [40] Kth Largest Element in an Array
+
+```
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        int start = 0; // Start index of the array
+        int end = nums.length - 1; // End index of the array
+        int index = nums.length - k; // Index to find (0-based index)
+
+        while(start <= end) {
+            int pivot = partition(nums, start, end); // Partition and get pivot index
+            if(pivot < index) {
+                start = pivot + 1; // Search right part
+            } else if(pivot > index) {
+                end = pivot - 1; // Search left part
+            } else {
+                return nums[pivot]; // Found the k-th largest element
+            }
+        }
+        return nums[start]; // Return element if not found by partition
+    }
+
+    private int partition(int[] nums, int start, int end) {
+        int pivot = nums[start]; // Choose pivot
+        int left = start + 1; // Left pointer
+        int right = end; // Right pointer
+
+        while(left <= right) {
+            while(left <= right && nums[left] <= pivot) {
+                left++; // Move left pointer right
+            }
+            while(left <= right && nums[right] > pivot) {
+                right--; // Move right pointer left
+            }
+            if(left <= right) {
+                swap(nums, left, right); // Swap elements
+                left++;
+                right--;
+            }
+        }
+        swap(nums, start, right); // Place pivot in correct position
+        return right; // Return pivot index
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp; // Swap elements
+    }
+}
+
+```

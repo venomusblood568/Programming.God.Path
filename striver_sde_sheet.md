@@ -20,7 +20,7 @@
 - [x] Search in a 2D matrix
 - [x] Pow(x, n)
 - [x] Majority Element (>n/2 times)
-- [ ] Majority Element (n/3 times)
+- [x] Majority Element (n/3 times)
 - [ ] Grid Unique Paths
 - [ ] Reverse Pairs (Leetcode)
 

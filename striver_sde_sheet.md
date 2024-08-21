@@ -21,7 +21,7 @@
 - [x] Pow(x, n)
 - [x] Majority Element (>n/2 times)
 - [x] Majority Element (n/3 times)
-- [ ] Grid Unique Paths
+- [x] Grid Unique Paths
 - [ ] Reverse Pairs (Leetcode)
 
 ### Day 4: Arrays Part-IV

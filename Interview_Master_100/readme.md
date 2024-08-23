@@ -1184,3 +1184,96 @@ class Solution {
 }
 
 ```
+
+***
+
+***
+
+# [98] Find Peak Element
+
+```
+//binary search 
+class Solution {
+    public int findPeakElement(int[] nums) {
+
+        // for base case 1
+        if(nums.length == 1){
+            return 0;
+        }
+        
+        int n = nums.length;
+
+        // for base case 2
+        if(nums[0] > nums[1]){
+            return 0;
+        }
+        // for base case 3
+        if(nums[n-1] > nums[n-2]){
+            return n-1;
+        }
+
+        int low = 1;
+        int high = n - 2;
+
+        while(low <= high){
+            int mid = low + ((high-low) / 2 );
+            if(nums[mid] > nums[mid - 1] && nums[mid] > nums[mid+1]){
+                return mid;
+            }
+            else if(nums[mid] < nums[mid - 1]){
+                high = mid - 1;
+            }
+            else if(nums[mid] < nums[mid + 1]){
+                low = mid + 1;
+            }
+        }
+        return -1;
+    }
+}
+```
+
+# [99] Find Minimum in Rotated Sorted Array
+
+```
+#binary search approach
+class Solution {
+    public int findMin(int[] nums) {
+        int low = 0;
+        int high = nums.length -1; 
+        int ans = Integer.MAX_VALUE;
+
+        while(low <= high){
+            int mid = low + ((high - low)/2);
+            if(nums[low] <= nums[mid]){
+                ans = Math.min(ans,nums[low]);
+                low = mid + 1;
+            }else{
+                ans = Math.min(ans,nums[mid]);
+                high = mid - 1;
+            }
+        }
+        return ans;
+    }
+}
+```
+
+# [100] Remove Duplicates from Sorted Array
+
+```
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if(nums.length == 0){
+            return 0;
+        }
+
+        int count = 1;
+        
+        for(int i = 1; i < nums.length ; i++){
+            if(nums[i] != nums[i-1]){
+                nums[count++] = nums[i];
+            }
+        }
+        return count;
+    }
+}
+```

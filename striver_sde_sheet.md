@@ -121,10 +121,10 @@
 
 ### Day 15: String
 - [ ] Reverse Words in a String
-- [x] Longest Palindrome in a string
+- [] Longest Palindrome in a string
 - [x] Roman Number to Integer and vice versa
 - [ ] Implement ATOI/STRSTR
-- [ ] Longest Common Prefix
+- [x] Longest Common Prefix
 - [ ] Rabin Karp
 
 ### Day 16: String Part-II

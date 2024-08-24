@@ -121,7 +121,7 @@
 
 ### Day 15: String
 - [ ] Reverse Words in a String
-- [] Longest Palindrome in a string
+- [ ] Longest Palindrome in a string
 - [x] Roman Number to Integer and vice versa
 - [ ] Implement ATOI/STRSTR
 - [x] Longest Common Prefix

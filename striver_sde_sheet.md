@@ -120,7 +120,7 @@
 - [ ] The Celebrity Problem
 
 ### Day 15: String
-- [ ] Reverse Words in a String
+- [x] Reverse Words in a String
 - [ ] Longest Palindrome in a string
 - [x] Roman Number to Integer and vice versa
 - [ ] Implement ATOI/STRSTR

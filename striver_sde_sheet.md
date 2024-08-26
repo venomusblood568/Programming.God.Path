@@ -9,7 +9,7 @@
 - [x] Stock Buy and Sell
 
 ### Day 2: Arrays Part-II
-- [ ] Rotate Matrix
+- [x] Rotate Matrix
 - [ ] Merge Overlapping Subintervals
 - [ ] Merge two sorted arrays without extra space
 - [ ] Find the duplicate in an array of N+1 integers
@@ -131,7 +131,7 @@
 - [ ] Z-Function
 - [ ] KMP algo / LPS(pi) array
 - [ ] Minimum characters needed to be inserted in the beginning to make it palindromic
-- [ ] Check for Anagrams
+- [x] Check for Anagrams
 - [ ] Count and say
 - [ ] Compare version numbers
 

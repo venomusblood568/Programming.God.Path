@@ -128,7 +128,7 @@
 - [ ] Rabin Karp
 
 ### Day 16: String Part-II
-- [ ] Z-Function
+- [x] Z-Function
 - [ ] KMP algo / LPS(pi) array
 - [ ] Minimum characters needed to be inserted in the beginning to make it palindromic
 - [x] Check for Anagrams

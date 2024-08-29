@@ -123,9 +123,9 @@
 - [x] Reverse Words in a String
 - [x] Longest Palindrome in a string
 - [x] Roman Number to Integer and vice versa
-- [ ] Implement ATOI/STRSTR
+- [x] Implement ATOI/STRSTR
 - [x] Longest Common Prefix
-- [ ] Rabin Karp
+- [x] Rabin Karp
 
 ### Day 16: String Part-II
 - [x] Z-Function

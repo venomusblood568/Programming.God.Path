@@ -1184,9 +1184,53 @@ class Solution {
 }
 
 ```
+# [41] Find Peak Element
+
+```
+class Solution {
+    int start = 0; // Start index of the longest palindrome found
+    int max = 0;   // Length of the longest palindrome found
+    
+    // Main function to find the longest palindromic substring
+    public String longestPalindrome(String s) {
+        // If the string length is less than 2, return the string itself
+        if(s.length() < 2){
+            return s;
+        }
+
+        // Convert the string to a character array for easier manipulation
+        char[] chars = s.toCharArray();
+
+        // Iterate through each character in the string
+        for(int i = 0; i < chars.length; i++){
+            // Check for odd length palindromes centered at i
+            helper(chars, i, i);
+            // Check for even length palindromes centered between i and i+1
+            helper(chars, i, i + 1);
+        }
+
+        // Return the longest palindromic substring found
+        return s.substring(start, start + max);
+    }
+
+    // Helper function to expand around the center and check for palindromes
+    private void helper(char[] chars, int j, int k){
+        // Expand outwards as long as the characters match and are within bounds
+        while(j >= 0 && k < chars.length && chars[j] == chars[k]){
+            j--; // Move left pointer leftwards
+            k++; // Move right pointer rightwards
+        }
+        // Update max length and start index if a longer palindrome is found
+        if(max < k - j - 1){
+            max = k - j - 1; // Update max with the new length of the palindrome
+            start = j + 1;   // Update start to the new starting index of the palindrome
+        }
+    }
+}
+
+```
 
 ***
-
 ***
 
 # [98] Find Peak Element

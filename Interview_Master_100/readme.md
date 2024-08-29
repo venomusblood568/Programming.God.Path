@@ -1229,6 +1229,43 @@ class Solution {
 }
 
 ```
+# [42] Longest Substring Without Repeating Characters
+```
+//second approach 
+//tc => O(n^2) and sc => O(1) 
+// tc => O(n) and sc = O(m,n) this is for sliding window technique
+
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int lp = 0; // Left pointer (start of the current window)
+        int rp = 0; // Right pointer (end of the current window)
+        int maxLen = 0; // Variable to store the maximum length of substring without repeating characters
+        
+        // Traverse the string with the right pointer
+        while (rp < s.length()) {
+            char c = s.charAt(rp); // Get the current character at the right pointer
+            
+            // Check for duplicates by scanning the current window [lp, rp)
+            for (int i = lp; i < rp; i++) {
+                if (s.charAt(i) == c) { // If a duplicate is found
+                    lp = i + 1; // Move the left pointer to the right of the duplicate character
+                    break; // Exit the loop since we've handled the duplicate
+                }
+            }
+            
+            // Calculate the length of the current window and update maxLen if it's the longest found so far
+            maxLen = Math.max(maxLen, rp - lp + 1);
+            
+            // Move the right pointer to the next character
+            rp++;
+        }
+        
+        return maxLen; // Return the maximum length of substring without repeating characters
+    }
+}
+
+```
+
 
 ***
 ***

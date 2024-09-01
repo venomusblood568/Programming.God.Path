@@ -1265,6 +1265,60 @@ class Solution {
 }
 
 ```
+# [47] Permutations
+```
+import java.util.ArrayList;  // Import ArrayList class for using list data structures
+import java.util.List;       // Import List interface
+
+class Solution {
+    // List to store all the permutations of the given array
+    private List<List<Integer>> ans = new ArrayList<>();
+
+    // Helper method to perform the recursive permutation generation
+    private void recursion_helper(int[] nums, int i) {
+        // Base case: If the current index i equals the length of the array
+        if (i == nums.length) {
+            // Create a new list to store the current permutation
+            List<Integer> temp = new ArrayList<>();
+            // Add all elements of nums to temp
+            for (int num : nums) {
+                temp.add(num);
+            }
+            // Add the current permutation to the ans list
+            ans.add(temp);
+            // Exit the recursion at this branch
+            return;
+        }
+        // Loop through the array starting from index i to generate permutations
+        for (int j = i; j < nums.length; j++) {
+            // Swap the element at index i with the element at index j
+            swap(nums, i, j);
+            // Recursively call the helper method with the next index
+            recursion_helper(nums, i + 1);
+            // Swap back to restore the original array order (backtrack)
+            swap(nums, i, j);
+        }
+    }
+
+    // Method to swap two elements in the array
+    private void swap(int[] nums, int i, int j) {
+        // Temporary variable to hold the value during swapping
+        int temp = nums[i];
+        // Swap the elements
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
+    // Public method to generate all permutations of the given array
+    public List<List<Integer>> permute(int[] nums) {
+        // Start the recursion with the initial index 0
+        recursion_helper(nums, 0);
+        // Return the list containing all permutations
+        return ans;
+    }
+}
+
+```
 
 
 ***

@@ -1265,6 +1265,43 @@ class Solution {
 }
 
 ```
+# [43] Maximal Square
+
+```
+class Solution {
+    public int maximalSquare(char[][] a) {
+        //base case
+        if(a.length == 0){
+            return 0;  
+        }
+        int m = a.length; 
+        int n = a[0].length;
+        int result = 0;
+
+        int[][] b = new int[m+1][n+1];
+        for(int i = 1; i <= m; i++){
+            for(int j = 1; j <= n; j++){
+                if(a[i-1][j-1] == '1'){
+                    int left = b[i][j-1];       // Value to the left of the current cell
+                    int top = b[i-1][j];        // Value above the current cell
+                    int topLeft = b[i-1][j-1];  // Value diagonally above-left of the current cell
+
+                    // Find the minimum value among the three neighbors
+                    int minValue = Math.min(Math.min(left, topLeft), top);
+
+                    // Add 1 to the minimum value and assign it to the current cell
+                    b[i][j] = minValue + 1;
+                    result = Math.max(b[i][j],result);
+
+                }
+            }
+        }
+        return result*result;
+    }
+}
+```
+
+
 # [47] Permutations
 ```
 import java.util.ArrayList;  // Import ArrayList class for using list data structures

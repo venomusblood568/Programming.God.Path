@@ -1325,6 +1325,41 @@ class Solution {
 }
 ```
 
+# [45] Minimum Window Substring
+
+```
+class Solution {
+    public String minWindow(String s, String t) {
+        int[] map = new int[128];
+        int begin = 0;
+        int end = 0;
+        int counter = t.length();
+        int d= Integer.MAX_VALUE;
+        int head = 0;
+
+        for(char c: t.toCharArray()){
+            map[c]++;
+        }
+
+        char[] ch = s.toCharArray();
+        while(end < s.length()){
+            if(map[ch[end++]] --> 0){
+                counter--;
+            }
+            while(counter == 0){
+                if((end - begin) < d){
+                    d = end - (head = begin);
+                } 
+                if(map[ch[begin++]]++ == 0){
+                    counter++;
+                }
+            }
+        }
+        return d == Integer.MAX_VALUE ? "" : s.substring(head,head+d);
+    }
+}
+```
+
 # [47] Permutations
 ```
 import java.util.ArrayList;  // Import ArrayList class for using list data structures

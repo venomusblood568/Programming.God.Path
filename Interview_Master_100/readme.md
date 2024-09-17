@@ -1462,6 +1462,47 @@ class Solution {
 
 ```
 ***
+
+# [51] Search in Rotated Sorted Array
+
+```
+class Solution {
+    public int search(int[] nums, int target) {
+        int low = 0; // Initialize the lower bound of the search range
+        int high = nums.length - 1; // Initialize the upper bound of the search range
+        
+        while (low <= high) { // Continue searching while the range is valid
+            
+            int mid = low + (high - low) / 2; // Find the middle index of the current range
+
+            if (nums[mid] == target) { // Check if the middle element is the target
+                return mid; // Target found, return its index
+            }
+
+            // Check if the left half of the array is sorted
+            if (nums[low] <= nums[mid]) {
+                // Check if the target is within the sorted left half
+                if (nums[low] <= target && target < nums[mid]) {
+                    high = mid - 1; // Narrow search range to the left half
+                } else {
+                    low = mid + 1; // Narrow search range to the right half
+                }
+            } else {
+                // Right half is sorted
+                // Check if the target is within the sorted right half
+                if (nums[mid] < target && target <= nums[high]) {
+                    low = mid + 1; // Narrow search range to the right half
+                } else {
+                    high = mid - 1; // Narrow search range to the left half
+                }
+            }
+        }
+        
+        return -1; // Target not found, return -1
+    }
+}
+
+```
 ***
 
 # [98] Find Peak Element

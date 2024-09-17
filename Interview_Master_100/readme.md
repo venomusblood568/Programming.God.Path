@@ -1503,6 +1503,29 @@ class Solution {
 }
 
 ```
+# [52] Subsets
+```
+class Solution {
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> list = new ArrayList<>();
+        Arrays.sort(nums); // Sort to handle duplicates (though not strictly needed for distinct elements)
+        backtrack(list, new ArrayList<>(), nums, 0); // Start backtracking
+        return list;
+    }
+
+    private void backtrack(List<List<Integer>> list, List<Integer> templist, int[] nums, int start) {
+        list.add(new ArrayList<>(templist)); // Add the current subset to the list
+        
+        for (int i = start; i < nums.length; i++) {
+            templist.add(nums[i]); // Include nums[i] in the current subset
+            backtrack(list, templist, nums, i + 1); // Recurse with the updated subset
+            templist.remove(templist.size() - 1); // Backtrack, remove the last element
+        }
+    }
+}
+
+```
+
 ***
 
 # [98] Find Peak Element

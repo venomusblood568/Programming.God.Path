@@ -1526,6 +1526,34 @@ class Solution {
 
 ```
 
+# [55] Two Sum II - Input Array Is Sorted
+```
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int left = 0; // Initialize the left pointer at the start of the array
+        int right = nums.length - 1; // Initialize the right pointer at the end of the array
+        int[] ans = new int[2]; // Array to store the indices of the two numbers
+
+        while (left < right) { // Continue until the pointers meet
+            int sum = nums[left] + nums[right]; // Calculate the sum of the two numbers pointed by left and right
+
+            if (sum == target) { // Check if the sum equals the target
+                ans[0] = left + 1; // Store the index of the left number (1-based index)
+                ans[1] = right + 1; // Store the index of the right number (1-based index)
+                break; // Exit the loop as we've found the solution
+            } else if (sum > target) { // If the sum is greater than the target
+                right--; // Move the right pointer to the left to reduce the sum
+            } else { // If the sum is less than the target
+                left++; // Move the left pointer to the right to increase the sum
+            }
+        }
+        
+        return ans; // Return the indices of the two numbers
+    }
+}
+
+```
+
 ***
 
 # [98] Find Peak Element

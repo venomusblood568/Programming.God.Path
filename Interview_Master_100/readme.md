@@ -1554,6 +1554,34 @@ class Solution {
 
 ```
 
+# [56] Unique Paths
+```
+class Solution {
+    public int uniquePaths(int m, int n) {
+        // Total number of steps we need to take (right + down)
+        int totalstep = m + n - 2;
+        
+        // Number of downward steps needed
+        int stepdown = m - 1;
+        
+        // Initialize paths to 1 (since we're calculating combinations)
+        long paths = 1;
+
+        // Calculate the number of unique paths using combinatorics
+        // C(totalstep, stepdown) = totalstep! / (stepdown! * (totalstep - stepdown)!)
+        for(int i = 1; i <= stepdown; i++){
+            // Multiplying with (totalstep - stepdown + i) and dividing by i
+            // This avoids calculating large factorials directly
+            paths = paths * (totalstep - stepdown + i) / i;
+        }
+
+        // Return the result as an integer (since paths is a long type)
+        return (int) paths;
+    }
+}
+
+```
+
 ***
 
 # [98] Find Peak Element

@@ -1581,6 +1581,107 @@ class Solution {
 }
 
 ```
+# [57] Valid Sudoku
+```
+class Solution {
+    public boolean isValidSudoku(char[][] board) {
+        // Create a set to store the unique entries for rows, columns, and 3x3 boxes
+        Set<String> set = new HashSet<>();
+
+        // Traverse through each cell in the 9x9 board
+        for(int i = 0; i < 9; i++){
+            for(int j = 0; j < 9; j++){
+                char n = board[i][j];  // Get the value at the current position (i, j)
+                
+                // If the current cell contains a number (not '.')
+                if(n != '.'){
+                    // Try to add the number for its row, column, and 3x3 sub-box
+                    // If adding fails (set already contains this entry), return false
+                    if(!set.add(n + "r" + i) || // Check row uniqueness for number 'n'
+                       !set.add(n + "c" + j) || // Check column uniqueness for number 'n'
+                       !set.add(n + "b" + i/3 + j/3)) // Check 3x3 sub-box uniqueness for 'n'
+                    return false;
+                }
+            }
+        }
+        return true;  // If no duplicates are found, the Sudoku board is valid
+    }
+}
+
+```
+# [58] Word Break
+
+```
+class Solution {
+    public boolean wordBreak(String s, List<String> wordDict) {
+        // Convert the word dictionary list to a set for faster lookup
+        Set<String> wordSet = new HashSet<>(wordDict);
+        
+        int n = s.length();  // Get the length of the string `s`
+        
+        // Create a boolean array dp of size n+1 to track if the substring can be segmented
+        // dp[i] will be true if the substring s[0:i] can be segmented into words from wordSet
+        boolean[] dp = new boolean[n+1];
+        dp[0] = true;  // Base case: an empty string can always be segmented
+
+        // Iterate over each position `i` in the string `s`
+        for(int i = 1; i <= n; i++){
+            // For each position `i`, check all possible previous break points `j`
+            for(int j = 0; j < i; j++){
+                // If dp[j] is true (meaning substring s[0:j] can be segmented)
+                // and s[j:i] is a word in the wordSet, mark dp[i] as true
+                if(dp[j] && wordSet.contains(s.substring(j, i))){
+                    dp[i] = true;  // Mark that s[0:i] can be segmented
+                    break;  // Break the inner loop since we found a valid segmentation
+                }
+            }
+        }
+        return dp[n];  // Return whether the entire string can be segmented
+    }
+}
+
+```
+
+# [60] Add Two Numbers 
+
+```
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        // Create a dummy node to simplify handling the result linked list
+        ListNode dummy = new ListNode();
+        // Create a pointer 'result' that will point to the beginning of the result list
+        ListNode result = dummy;
+        int total = 0;  // Variable to store the sum of corresponding digits from l1 and l2
+        int carry = 0;  // Variable to store the carry value (either 0 or 1)
+        // Loop continues while either l1, l2 has nodes left or carry is non-zero
+        while(l1 != null || l2 != null || carry != 0){
+            total = carry;  // Start the current sum with the carry value from the last addition
+            // Add the value from l1 to the total, if l1 is not null, then move l1 to the next node
+            if(l1 != null){
+                total += l1.val;
+                l1 = l1.next;
+            }
+            // Add the value from l2 to the total, if l2 is not null, then move l2 to the next node
+            if(l2 != null){
+                total += l2.val;
+                l2 = l2.next;
+            }
+            // Calculate the current digit value (num) and carry for the next position
+            int num = total % 10;  // Get the last digit (remainder when divided by 10)
+            carry = total / 10;    // Update carry for the next iteration
+            // Add the current digit as a new node to the result linked list
+            dummy.next = new ListNode(num);
+            // Move the dummy pointer to the next node in the result list
+            dummy = dummy.next;
+        }
+        // Return the head of the result list (skipping the initial dummy node)
+        return result.next;
+    }
+}
+
+```
+
+
 
 ***
 

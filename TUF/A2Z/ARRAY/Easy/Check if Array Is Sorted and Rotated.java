@@ -1,3 +1,6 @@
+//Time Complexity (TC): O(n)
+//Space Complexity (SC): O(1)
+
 class solution{
     public boolean check(int[] nums){
         int n = nums.length;

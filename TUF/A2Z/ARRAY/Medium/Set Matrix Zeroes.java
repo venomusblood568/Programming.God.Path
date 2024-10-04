@@ -1,4 +1,6 @@
-class solution{
+//tc => O(m×n)
+//sc => O(m+n)
+class Solution{
     public void setZeroes(int[][] matrix) {
         int m = matrix.length;
         int n = matrix[0].length;
